@@ -2,12 +2,15 @@ let text = document.getElementById("text");
 const start = document.getElementById("start");
 const stop = document.getElementById("stop");
 
-userAgent = navigator.userAgent;
-// if brower don't support speach reconginsation feature
-if (userAgent != '/chrome|chromium|crios/i' || !"webkitSpeechRecognition" in window ) {
-    text.innerText = "Your Brower don't Support this feature. This is only Supported by chrome browser.";
-} else {
+
+let userAgent = navigator.userAgent;
+
+if(userAgent.match(/chrome|chromium|crios/i))
+{
     text.innerText = "Press start button .";
+}
+ else {
+    text.innerText = "Your Brower don't Support this feature. This is only Supported by chrome browser.";
 }
 
 
